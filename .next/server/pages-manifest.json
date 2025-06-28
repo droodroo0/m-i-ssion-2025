@@ -1,13 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/api/log": "pages/api/log.js",
-  "/api/fingerprint": "pages/api/fingerprint.js",
-  "/parcours": "pages/parcours.js",
-  "/api/auto-location": "pages/api/auto-location.js",
-  "/guide-ia": "pages/guide-ia.js",
-  "/api/log-client": "pages/api/log-client.js",
-  "/contact": "pages/contact.js",
-  "/": "pages/index.js"
-}
+{}

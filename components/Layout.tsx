@@ -14,7 +14,7 @@ interface LayoutProps {
 export default function Layout({ children, currentPath, className = '' }: LayoutProps) {
   const [consent, setConsent] = useState(null)
 
-  const handleConsentChange = (consentData) => {
+  const handleConsentChange = (consentData: any) => {
     setConsent(consentData)
   }
 
@@ -22,9 +22,7 @@ export default function Layout({ children, currentPath, className = '' }: Layout
     <NotificationManager>
       <div className="min-h-screen flex flex-col">
         <Navigation currentPath={currentPath} />
-        <main className={`flex-1 ${className}`}>
-          {children}
-        </main>
+        <main className={`flex-1 ${className}`}>{children}</main>
         <Footer />
         <ConsentBanner onConsentChange={handleConsentChange} />
         {consent && <TrackingScript consent={consent} />}
