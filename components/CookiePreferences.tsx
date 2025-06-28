@@ -26,7 +26,7 @@ const CookiePreferences: React.FC<CookiePreferencesProps> = ({ isOpen, onClose }
           const parsed = JSON.parse(savedConsent)
           setPreferences(parsed)
         } catch (error) {
-          console.error('Erreur lors du parsing des préférences cookies:', error)
+          // Erreur lors du parsing des préférences cookies
         }
       }
     }

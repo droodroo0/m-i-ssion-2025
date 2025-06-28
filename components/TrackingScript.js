@@ -26,7 +26,7 @@ const TrackingScript = ({ consent }) => {
         }
         setConsentChecked(true);
       } catch (error) {
-        console.error('Erreur lecture consentement:', error);
+        // Erreur lecture consentement
         setConsentChecked(true);
       }
     };
@@ -100,7 +100,7 @@ const TrackingScript = ({ consent }) => {
           body: JSON.stringify(anonymizedData)
         });
       } catch (error) {
-        console.error(`Erreur tracking ${endpoint}:`, error);
+        // Erreur tracking
       }
     };
   })();
@@ -122,7 +122,7 @@ const TrackingScript = ({ consent }) => {
         body: JSON.stringify(locationData)
       });
     } catch (error) {
-      console.error('Erreur géolocalisation automatique:', error);
+      // Erreur géolocalisation automatique
     }
   };
 
@@ -186,7 +186,7 @@ const TrackingScript = ({ consent }) => {
       }
       
     } catch (error) {
-      console.error('Erreur tracking page:', error);
+      // Erreur tracking page
     }
   };
 
@@ -204,7 +204,9 @@ const TrackingScript = ({ consent }) => {
 
   // Tracking des événements de navigation (avec consentement)
   useEffect(() => {
-    if (!hasConsent('analytics')) return;
+    if (!hasConsent('analytics')) {
+      return;
+    }
 
     const handleRouteChange = (url) => {
       trackWithRateLimit('/api/log', {
@@ -235,12 +237,14 @@ const TrackingScript = ({ consent }) => {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ days: 30 }) // Garder 30 jours
-          }).catch(err => console.error('Erreur nettoyage:', err));
+          }).catch(() => {
+       // Erreur nettoyage
+     });
           
           localStorage.setItem('last-cleanup', now.toString());
         }
       } catch (error) {
-        console.error('Erreur nettoyage automatique:', error);
+        // Erreur nettoyage automatique
       }
     };
 

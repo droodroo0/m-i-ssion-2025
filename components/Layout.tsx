@@ -12,9 +12,9 @@ interface LayoutProps {
 }
 
 export default function Layout({ children, currentPath, className = '' }: LayoutProps) {
-  const [consent, setConsent] = useState(null)
+  const [consent, setConsent] = useState<{ analytics: boolean; marketing: boolean } | null>(null)
 
-  const handleConsentChange = (consentData: any) => {
+  const handleConsentChange = (consentData: { analytics: boolean; marketing: boolean }) => {
     setConsent(consentData)
   }
 

@@ -2,8 +2,8 @@
 
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void
-    dataLayer: any[]
+    gtag: (...args: unknown[]) => void
+  dataLayer: unknown[]
   }
 }
 
@@ -56,7 +56,7 @@ export const trackEvent = ({
 }
 
 // Suivre les Web Vitals
-export const trackWebVitals = (metric: any) => {
+export const trackWebVitals = (metric: { name: string; value: number; id: string }) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', metric.name, {
       event_category: 'Web Vitals',
@@ -68,12 +68,12 @@ export const trackWebVitals = (metric: any) => {
 
   // Log en console pour le développement
   if (process.env.NODE_ENV === 'development') {
-    console.log('Web Vital:', metric)
+    // Web Vital logged
   }
 }
 
 // Suivre les erreurs
-export const trackError = (error: Error, errorInfo?: any) => {
+export const trackError = (error: Error) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', 'exception', {
       description: error.message,
@@ -82,7 +82,7 @@ export const trackError = (error: Error, errorInfo?: any) => {
   }
 
   // Log en console
-  console.error('Tracked Error:', error, errorInfo)
+  // Tracked Error logged
 }
 
 // Suivre les conversions

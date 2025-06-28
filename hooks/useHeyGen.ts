@@ -151,7 +151,7 @@ export const useHeyGen = (): UseHeyGenReturn => {
     
     // Ici, on pourrait implémenter l'envoi réel du message à HeyGen
     // Pour l'instant, on simule juste l'ajout du message
-    console.log('Message envoyé à HeyGen:', message);
+    // Message envoyé à HeyGen
   }, []);
 
   // Basculer la visibilité

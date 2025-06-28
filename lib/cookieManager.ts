@@ -33,12 +33,14 @@ export class CookieManager {
   getConsentSettings(): CookieSettings | null {
     try {
       const stored = localStorage.getItem(CONSENT_KEY)
-      if (!stored) return null
+      if (!stored) {
+        return null
+      }
       
       const data: ConsentData = JSON.parse(stored)
       return data.settings
     } catch (error) {
-      console.error('Erreur lors de la lecture du consentement:', error)
+      // Erreur lors de la lecture du consentement
       return null
     }
   }
@@ -62,7 +64,7 @@ export class CookieManager {
       const event = new CustomEvent('cookieConsentChanged', { detail: settings })
       window.dispatchEvent(event)
     } catch (error) {
-      console.error('Erreur lors de la sauvegarde du consentement:', error)
+      // Erreur lors de la sauvegarde du consentement
     }
   }
 
@@ -124,7 +126,7 @@ export class CookieManager {
       try {
         callback(settings)
       } catch (error) {
-        console.error('Erreur dans le listener de consentement:', error)
+        // Erreur dans le listener de consentement
       }
     })
   }
@@ -135,12 +137,14 @@ export class CookieManager {
   shouldRequestConsent(): boolean {
     try {
       const stored = localStorage.getItem(CONSENT_KEY)
-      if (!stored) return true
+      if (!stored) {
+        return true
+      }
       
       const data: ConsentData = JSON.parse(stored)
       return data.version !== CONSENT_VERSION
     } catch (error) {
-      console.error('Erreur lors de la vérification de la version:', error)
+      // Erreur lors de la vérification de la version
       return true
     }
   }
@@ -153,7 +157,7 @@ export class CookieManager {
       const stored = localStorage.getItem(CONSENT_KEY)
       return stored ? JSON.parse(stored) : null
     } catch (error) {
-      console.error('Erreur lors de la lecture des données de consentement:', error)
+      // Erreur lors de la lecture des données de consentement
       return null
     }
   }

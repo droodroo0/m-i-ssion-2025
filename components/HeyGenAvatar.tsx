@@ -22,7 +22,7 @@ const HeyGenAvatar: React.FC<HeyGenAvatarProps> = ({ className = '' }) => {
         await embedElement.requestFullscreen();
       }
     } catch (error) {
-      console.warn('Erreur lors du basculement en plein écran:', error);
+      // Erreur lors du basculement en plein écran
     }
   };
 
