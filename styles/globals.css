@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-emeraude bg-white;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-emeraude;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  p {
+    @apply text-base md:text-lg;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-or hover:bg-or-dark text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-prusse hover:bg-prusse-dark text-emeraude px-6 py-3 rounded-lg font-medium transition-all duration-300 border border-emeraude/20;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  /* Styles pour l'avatar HeyGen en format rectangulaire intégré */
+  .heygen-avatar-container #heygen-streaming-embed {
+    position: relative !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 200px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: auto !important;
+  }
+  
+  .heygen-avatar-container #heygen-streaming-embed.expand {
+    height: 300px !important;
+    width: 100% !important;
+    left: auto !important;
+    transform: none !important;
+    border-radius: 8px !important;
+  }
+  
+  .heygen-avatar-container #heygen-streaming-container {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .heygen-avatar-container #heygen-streaming-container iframe {
+    border-radius: 8px;
+  }
+
+  /* Direction artistique adaptée aux fonds */
+  .text-on-dark {
+    @apply text-white drop-shadow-lg;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .text-on-light {
+    @apply text-emeraude;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  }
+
+  .text-on-gradient {
+    @apply text-white;
+    text-shadow: 0 2px 8px rgba(19, 63, 73, 0.8), 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-on-mountain {
+    @apply text-white;
+    text-shadow: 2px 2px 4px rgba(19, 63, 73, 0.9), 0 0 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .subtitle-on-dark {
+    @apply text-prusse;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .subtitle-on-light {
+    @apply text-gray-600;
+  }
+
+  /* Amélioration des contrastes pour les cartes */
+  .card-on-light {
+    @apply bg-white/95 backdrop-blur-sm border border-emeraude/10 shadow-xl;
+  }
+
+  .card-on-dark {
+    @apply bg-emeraude/90 backdrop-blur-sm border border-or/20 shadow-2xl;
+  }
+
+  /* Boutons adaptés aux contextes */
+  .btn-on-dark {
+    @apply bg-or hover:bg-or-dark text-emeraude px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg border border-or/30;
+  }
+
+  .btn-on-light {
+    @apply bg-emeraude hover:bg-emeraude-dark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg;
+  }
+
+  /* Effets de texte spéciaux */
+  .text-hero {
+    @apply text-white;
+    text-shadow: 2px 2px 8px rgba(19, 63, 73, 0.8), 0 0 16px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #ffffff 0%, #C2E5F5 50%, #B99C6A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-accent {
+    @apply text-or;
+    text-shadow: 0 1px 2px rgba(19, 63, 73, 0.3);
+  }
+
+  /* Overlays pour améliorer la lisibilité */
+  .overlay-dark {
+    background: linear-gradient(135deg, rgba(19, 63, 73, 0.8) 0%, rgba(19, 63, 73, 0.6) 100%);
+  }
+
+  .overlay-light {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(194, 229, 245, 0.7) 100%);
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .topographic-bg {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(194, 229, 245, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(185, 156, 106, 0.1) 0%, transparent 50%),
+      linear-gradient(45deg, transparent 40%, rgba(19, 63, 73, 0.05) 50%, transparent 60%);
+  }
+  
+  .mountain-gradient {
+    background: linear-gradient(135deg, 
+      rgba(19, 63, 73, 0.9) 0%, 
+      rgba(21, 46, 56, 0.8) 50%, 
+      rgba(185, 156, 106, 0.1) 100%);
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .parallax-element {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}

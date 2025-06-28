@@ -1,0 +1,82 @@
+
+Cahier des charges — Site vitrine M-I-SSION (version mise à jour)
+
+1. Objectif du site
+Créer un site scénarisé et immersif, basé sur la métaphore de la montagne, qui guide le visiteur depuis le camp de base jusqu’au sommet.
+
+Objectifs principaux :
+- Inspirer, convaincre, transformer le visiteur en prospect actif.
+- Valoriser les process, outils d’automatisation, et l’accompagnement humain.
+- Cibler tous les niveaux de maturité numérique.
+
+2. Cibles
+- Dirigeants, RH, équipes projets, opérationnels, financeurs…
+- De l’indépendant au décideur d’entreprise.
+- Tout niveau de culture digitale (débutant à expert).
+
+3. Ton & expérience utilisateur
+- Professionnel, narratif et chaleureux
+- Immersif, fluide, sans surcharge
+- Lisible, rassurant, clair
+
+4. Métaphore de la montagne
+Parcours structuré :
+- Camp de base → zones de progression → zones de danger → sommet
+- Chaque étape est un chapitre scénarisé
+- Transitions douces (parallaxe, scroll animé, zooms…)
+- À la fin : navigation libre
+
+5. Fonctionnalités principales
+- Parcours narratif interactif
+- Page dédiée au guide IA (HeyGen) → présentation, démonstration (bêta, pour le séminaire)
+- Pas d’intégration permanente du guide pendant la navigation
+- Formulaire de contact simple
+- Navigation libre après le parcours
+- Compatible mobile, tablette, desktop
+- Performant, accessible, SEO-friendly
+
+6. Direction artistique (nouvelle DA)
+Palette de couleurs officielle :
+- Émeraude : #133F49 (R19 G63 B73)
+- Émeraude ombré : #152E38 (R21 G46 B56)
+- Or : #B99C6A (R185 G156 B106)
+- Or ombré : #967C4F (R150 G124 B79)
+- Prusse : #C2E5F5 (R194 G229 B245)
+- Prusse ombré : #8DA5B0 (R141 G165 B179)
+
+Typographie :
+- Moderne, sobre, accessibilité prioritaire
+- Hiérarchie visuelle claire, tailles bien définies (ex. titres XL, paragraphes base)
+
+Ambiance visuelle :
+- Carte topographique en fond
+- Sentiment de voyage calme mais structuré
+- Aucune surcharge visuelle
+- Icônes minimalistes, pas de “bouton en savoir plus” inutile
+
+7. Valeurs à transmettre
+- Autonomie, Fiabilité, Engagement, Performance, Satisfaction, Cohérence
+
+Messages clés :
+- “Révélez la puissance de vos équipes grâce à des outils simples”
+- “Un cap clair dans un monde complexe”
+- Automatisation, IA, gouvernance fluide, suppression des tâches sans valeur
+
+8. Contraintes techniques
+- Node.js avec Next.js
+- Tailwind CSS
+- SEO optimisé
+- Responsive mobile / tablette / desktop
+- Code modulaire, maintenable
+- Intégration HeyGen uniquement sur la page avatar
+- Performances : temps de chargement rapide, lazy loading des médias
+
+9. Plan de développement
+1. Initialisation du projet Node.js (Next.js) + Tailwind + Git
+2. Intégration design system et thème couleur
+3. Mise en place du parcours narratif interactif
+4. Création de la page "Guide IA" pour le séminaire (version bêta)
+5. Construction des étapes du parcours (chapitres)
+6. Ajout de la navigation libre
+7. Intégration des contenus, test responsive, SEO
+8. Déploiement
